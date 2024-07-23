@@ -7,7 +7,7 @@ import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
 import SignUpBtn from "./../components/SignUpBtn";
 
-function SignUp() {
+function StudentSignUpPage() {
   return (
     <SignUpContainer>
       <SignUpAll>
@@ -169,4 +169,4 @@ const SignUpContainer = styled.div`
   align-items: center;
 `;
 
-export default SignUp;
+export default StudentSignUpPage;

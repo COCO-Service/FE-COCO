@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import StudentImg from "../assets/StudentImg.svg";
+import { useNavigate } from "react-router-dom";
 
 function StudentBtn() {
+  const navigate = useNavigate();
+  const StudentBtnClick = () => {
+    navigate("/StudentSignUp");
+  };
   return (
     <StudentWindowAll>
       <StudentBtnContent>
         <StudentBtnImg src={StudentImg} alt="학생 이미지" />
-        <StudentButton>학생</StudentButton>
+        <StudentButton onClick={StudentBtnClick}>학생</StudentButton>
       </StudentBtnContent>
     </StudentWindowAll>
   );

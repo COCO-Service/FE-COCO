@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import TeacherImg from "../assets/TeacherImg.svg";
+import { useNavigate } from "react-router-dom";
 
 function AdminBtn() {
+  const navigate = useNavigate();
+  const AdminBtnClick = () => {
+    navigate("/AdminSignUp");
+  };
   return (
     <StudentWindowAll>
       <AdminBtnContent>
         <AdminBtnImg src={TeacherImg} alt="선생님 이미지" />
-        <StudentButton>선생님</StudentButton>
+        <StudentButton onClick={AdminBtnClick}>선생님</StudentButton>
       </AdminBtnContent>
     </StudentWindowAll>
   );

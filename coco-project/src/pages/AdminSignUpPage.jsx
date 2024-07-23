@@ -1,14 +1,19 @@
 import Logo from "../assets/COCO.svg";
 import PassWord from "../components/PassWord";
-import Class from "../components/Class";
 import styled from "styled-components";
 import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
 import SignUpBtn from "./../components/SignUpBtn";
 import AdminNum from "../components/AdminNum";
+import { useNavigate } from "react-router-dom";
 
 function AdminSignUpPage() {
+  const navigate = useNavigate();
+  const LoginNavClick = () => {
+    navigate("/Login");
+  };
+
   return (
     <SignUpContainer>
       <SignUpAll>
@@ -41,7 +46,7 @@ function AdminSignUpPage() {
             </FooterBtnCheck>
             <LoginAll>
               <LoginTitle>이미 계정이 있으신가요?</LoginTitle>
-              <LoginNav>로그인</LoginNav>
+              <LoginNav onClick={LoginNavClick}>로그인</LoginNav>
             </LoginAll>
           </FooterAll>
         </SignUpContents>

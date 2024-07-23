@@ -170,7 +170,7 @@ const SignUpContents = styled.div`
 
 const SignUpContainer = styled.div`
   display: flex;
-  margin: 209px 0px;
+  margin: 55px 0px;
   justify-content: center;
   align-items: center;
 `;

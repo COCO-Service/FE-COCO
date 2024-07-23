@@ -3,8 +3,14 @@ import PassWord from "../components/PassWord";
 import styled from "styled-components";
 import Id from "./../components/Id";
 import LoginBtn from "./../components/LoginBtn";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const SignUpNavClick = () => {
+    navigate("/SignUpStart");
+  };
+
   return (
     <LoginContainer>
       <LoginAll>
@@ -32,7 +38,7 @@ function LoginPage() {
             </FooterBtnCheck>
             <SignUpAll>
               <SignUpTitle>회원이 아니신가요?</SignUpTitle>
-              <SignUpNav>회원가입</SignUpNav>
+              <SignUpNav onClick={SignUpNavClick}>회원가입</SignUpNav>
             </SignUpAll>
           </FooterAll>
         </LoginContents>

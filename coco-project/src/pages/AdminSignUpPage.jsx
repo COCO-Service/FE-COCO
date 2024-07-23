@@ -6,8 +6,9 @@ import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
 import SignUpBtn from "./../components/SignUpBtn";
+import AdminNum from "../components/AdminNum";
 
-function StudentSignUpPage() {
+function AdminSignUpPage() {
   return (
     <SignUpContainer>
       <SignUpAll>
@@ -27,7 +28,7 @@ function StudentSignUpPage() {
               <PassWord />
               <PassWordReturn />
               <Name />
-              <Class />
+              <AdminNum />
             </InputAll>
           </SignUpContentsAll>
           <FooterAll>
@@ -169,4 +170,4 @@ const SignUpContainer = styled.div`
   align-items: center;
 `;
 
-export default StudentSignUpPage;
+export default AdminSignUpPage;

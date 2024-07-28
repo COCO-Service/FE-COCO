@@ -5,7 +5,7 @@ import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
 import SignUpBtn from "./../components/SignUpBtn";
-import AdminNum from "../components/AdminNum";
+import AdminNum from "./../components/adminPage/AdminNum";
 import { useNavigate } from "react-router-dom";
 
 function AdminSignUpPage() {

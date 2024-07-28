@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-function SignUpBtn() {
+export const SignUpBtn = () => {
   return <SignUpBtnAll>가입하기</SignUpBtnAll>;
-}
+};
 
 const SignUpBtnAll = styled.div`
   width: 536.64px;
@@ -17,5 +17,3 @@ const SignUpBtnAll = styled.div`
   align-items: center;
   cursor: pointer;
 `;
-
-export default SignUpBtn;

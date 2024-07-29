@@ -57,4 +57,5 @@ const AddBtn = styled.button`
 
 const NewNotice = styled.b`
   color: #585858;
+  font-weight: 700;
 `;

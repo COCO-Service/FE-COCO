@@ -2,7 +2,7 @@ import styled from "styled-components";
 import StudentBtn from "../components/StudentPage/StudentBtn";
 import AdminBtn from "./../components/adminPage/AdminBtn";
 
-function SignUpStartPage() {
+export const SignUpStartPage = () => {
   return (
     <SignUpStartAll>
       <SignUpTitleAll>
@@ -17,7 +17,7 @@ function SignUpStartPage() {
       </BtnAll>
     </SignUpStartAll>
   );
-}
+};
 
 const SignUpStartAll = styled.div`
   display: flex;
@@ -63,5 +63,3 @@ const BtnAll = styled.div`
   align-items: center;
   gap: 222px;
 `;
-
-export default SignUpStartPage;

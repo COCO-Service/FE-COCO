@@ -1,22 +1,21 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { AdminSignUpPage } from "./pages/AdminSignUpPage";
-import SignUpStartPage from "./pages/SignUpStartPage";
-import StudentSignUpPage from "./pages/StudentSignUpPage";
-import LoginPage from "./pages/LoginPage";
+import { SignUpStartPage } from "./pages/SignUpStartPage";
+import { StudentSignUpPage } from "./pages/StudentSignUpPage";
+import { LoginPage } from "./pages/LoginPage";
 import { GuestMainPage } from "./pages/GuestMainPage";
-import { StudentWritingPage } from "./pages/StudentWritingPage";
+import { AdminMainPage } from "./pages/AdminMainPage";
 
 export const AppRouter = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/AdminSignUp" element={<AdminSignUpPage />} />
-        <Route path="/SignUpStart" element={<SignUpStartPage />} />
-        <Route path="/StudentSignUp" element={<StudentSignUpPage />} />
-        <Route path="/Login" element={<LoginPage />} />
-        <Route path="/main" element={<GuestMainPage />} />
-        <Route path="/StudentWritingPage" element={<StudentWritingPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/adminsignUp" element={<AdminSignUpPage />} />
+      <Route path="/signupstart" element={<SignUpStartPage />} />
+      <Route path="/studentsignUp" element={<StudentSignUpPage />} />
+      <Route path="/adminmain" element={<AdminMainPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/guestmain" element={<GuestMainPage />} />
+      <Route path="*" element={<div>404</div>} />
+    </Routes>
   );
 };

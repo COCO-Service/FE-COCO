@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-function LoginBtn() {
+export const LoginBtn = () => {
   return <LoginBtnAll>로그인</LoginBtnAll>;
-}
+};
 
 const LoginBtnAll = styled.div`
   width: 536.64px;
@@ -17,5 +17,3 @@ const LoginBtnAll = styled.div`
   align-items: center;
   cursor: pointer;
 `;
-
-export default LoginBtn;

@@ -2,10 +2,10 @@ import Logo from "../assets/COCO.svg";
 import PassWord from "../components/PassWord";
 import styled from "styled-components";
 import Id from "./../components/Id";
-import LoginBtn from "./../components/LoginBtn";
+import { LoginBtn } from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
 
-function LoginPage() {
+export const LoginPage = () => {
   const navigate = useNavigate();
   const SignUpNavClick = () => {
     navigate("/SignUpStart");
@@ -45,7 +45,7 @@ function LoginPage() {
       </LoginAll>
     </LoginContainer>
   );
-}
+};
 
 const FooterAll = styled.div`
   display: flex;
@@ -166,5 +166,3 @@ const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export default LoginPage;

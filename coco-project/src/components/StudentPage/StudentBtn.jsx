@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import StudentImg from "../assets/StudentImg.svg";
+import StudentImg from "../../assets/StudentImg.svg";
 import { useNavigate } from "react-router-dom";
 
 function StudentBtn() {
@@ -35,6 +35,7 @@ const StudentWindowAll = styled.div`
   border-radius: 10px;
   border: 0.5px solid #878787;
   box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
 `;
 
 const StudentButton = styled.button`

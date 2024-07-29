@@ -5,8 +5,8 @@ import styled from "styled-components";
 import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
-import SignUpBtn from "./../components/SignUpBtn";
 import { useNavigate } from "react-router-dom";
+import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 
 function StudentSignUpPage() {
   const navigate = useNavigate();
@@ -101,6 +101,7 @@ const LoginAll = styled.div`
   display: flex;
   justify-content: center;
   gap: 7px;
+  background-color: #ffffff;
 `;
 
 const CheckBoxText = styled.div`

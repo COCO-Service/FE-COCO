@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TeacherImg from "../assets/TeacherImg.svg";
+import TeacherImg from "../../assets/TeacherImg.svg";
 import { useNavigate } from "react-router-dom";
 
 function AdminBtn() {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import StudentBtn from "../components/StudentBtn";
-import AdminBtn from "../components/AdminBtn";
+import StudentBtn from "../components/StudentPage/StudentBtn";
+import AdminBtn from "./../components/adminPage/AdminBtn";
 
 function SignUpStartPage() {
   return (
@@ -24,6 +24,7 @@ const SignUpStartAll = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 136px;
+  background-color: #ffffff;
 `;
 
 const SignUpTitleAll = styled.div`

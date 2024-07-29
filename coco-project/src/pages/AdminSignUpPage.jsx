@@ -4,11 +4,11 @@ import styled from "styled-components";
 import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
-import SignUpBtn from "./../components/SignUpBtn";
+import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
 import AdminNum from "./../components/adminPage/AdminNum";
 import { useNavigate } from "react-router-dom";
 
-function AdminSignUpPage() {
+export const AdminSignUpPage = () => {
   const navigate = useNavigate();
   const LoginNavClick = () => {
     navigate("/Login");
@@ -53,7 +53,7 @@ function AdminSignUpPage() {
       </SignUpAll>
     </SignUpContainer>
   );
-}
+};
 
 const FooterAll = styled.div`
   display: flex;
@@ -174,5 +174,3 @@ const SignUpContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export default AdminSignUpPage;

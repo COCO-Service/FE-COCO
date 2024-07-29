@@ -9,7 +9,7 @@ import styled from "styled-components";
 export const AdminMainPage = () => {
   return (
     <Container>
-      <Navbar />
+      <Navbar isMember={true} isStudent={true} />
       <MainContainer>
         <MainBanner />
         <RightContainer>

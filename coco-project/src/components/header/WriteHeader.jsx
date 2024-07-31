@@ -63,7 +63,7 @@ const WriteNav = styled.div`
   font-weight: 300;
   cursor: pointer;
   ${({ pathname }) =>
-    pathname === "/StudentWritingPage"
+    pathname === "/StudentWritingPage" || pathname === "/AdminWritingPage"
       ? css`
           color: #4f4cff;
           font-weight: 700;

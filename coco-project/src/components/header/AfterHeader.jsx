@@ -3,7 +3,7 @@ import COCOLogo from "../../assets/COCOLogo.svg";
 import { useLocation } from "react-router-dom";
 import { css } from "styled-components";
 
-export const WriteHeader = () => {
+export const AfterHeader = () => {
   const { pathname } = useLocation();
 
   return (
@@ -63,7 +63,8 @@ const WriteNav = styled.div`
   font-weight: 300;
   cursor: pointer;
   ${({ pathname }) =>
-    pathname === "/StudentWritingPage" || pathname === "/AdminWritingPage"
+    // pathname === "/StudentWritingPage" || pathname === "/AdminWritingPage"
+    pathname.includes("Writing")
       ? css`
           color: #4f4cff;
           font-weight: 700;

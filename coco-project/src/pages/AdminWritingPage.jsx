@@ -4,36 +4,62 @@ import { WritePlace } from "../components/WritePage/WritePlace";
 import { WriteDetail } from "./../components/WritePage/WriteDetail";
 import { WriteAttachment } from "./../components/WritePage/WriteAttachment";
 import { WriteDate } from "../components/WritePage/WriteDate";
-import { WriteHeader } from "../components/header/WriteHeader";
+import { AfterHeader } from "../components/header/AfterHeader";
 
 export const AdminWritingPage = () => {
   return (
     <WriteAll>
-      <WriteHeader />
-      <WriteHeadAll>
-        <NoteHeaderAll>
-          <WriteTitle />
-          <WritePlace />
-          <AttachmentDateAll>
-            <WriteAttachment />
-            <WriteDate />
-          </AttachmentDateAll>
-        </NoteHeaderAll>
-        <NoticeComplaintCheck>
-          <LabelAll>
-            민원 작성
-            <Complaint name="catagory" type="radio" />
-          </LabelAll>
-          <LabelAll>
-            공지 작성
-            <Notice name="catagory" type="radio" />
-          </LabelAll>
-        </NoticeComplaintCheck>
-      </WriteHeadAll>
-      <WriteDetail />
+      <AfterHeader />
+
+      <ContentsAll>
+        <WriteHeadAll>
+          <NoteHeaderAll>
+            <WriteTitle />
+            <WritePlace />
+            <AttachmentDateAll>
+              <WriteAttachment />
+              <WriteDate />
+            </AttachmentDateAll>
+          </NoteHeaderAll>
+          <NoticeComplaintCheck>
+            <LabelAll>
+              민원 작성
+              <Complaint name="catagory" type="radio" />
+            </LabelAll>
+            <LabelAll>
+              공지 작성
+              <Notice name="catagory" type="radio" />
+            </LabelAll>
+          </NoticeComplaintCheck>
+        </WriteHeadAll>
+        <WriteDetail />
+      </ContentsAll>
+
+      <CompleteBtn>작성완료</CompleteBtn>
     </WriteAll>
   );
 };
+
+const ContentsAll = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+`;
+
+const CompleteBtn = styled.div`
+  width: 350px;
+  height: 75px;
+  padding: 18px 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 37.5px;
+  color: #ffffff;
+  font-size: 26px;
+  border-radius: 10px;
+  background: #4f4cff;
+  cursor: pointer;
+`;
 
 const NoteHeaderAll = styled.div`
   display: flex;
@@ -68,7 +94,7 @@ const WriteAll = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 56px;
+  gap: 71px;
   margin-bottom: 97px;
 `;
 

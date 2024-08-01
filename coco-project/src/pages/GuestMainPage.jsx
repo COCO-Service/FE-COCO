@@ -2,15 +2,14 @@ import { MainBanner } from "../components/mainPage/MainBanner";
 import { Footer } from "../components/footer/Footer";
 import { MainComplain } from "../components/mainPage/MainComplain";
 import { MainNotice } from "../components/mainPage/MainNotice";
-import { Navbar } from "../components/header/Nav";
+import { GuestHeader } from "../components/header/GuestHeader";
 import { MainMember } from "../components/mainPage/MainMember";
-
 import styled from "styled-components";
 
 export const GuestMainPage = () => {
   return (
     <Container>
-      <Navbar />
+      <GuestHeader />
       <MainContainer>
         <MainBanner />
         <RightContainer>

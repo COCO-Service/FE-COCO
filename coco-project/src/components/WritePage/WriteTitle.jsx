@@ -16,16 +16,17 @@ const TitleAll = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 32px;
+  font-size: 27px;
   font-weight: 500;
 `;
 
 const TitleInput = styled.input`
   width: 1363px;
-  padding: 20px 1085px 20px 32px;
+  padding: 20px 0px 20px 32px;
   border-radius: 10px;
   border: 0.5px solid #878787;
   background: #fff;
+  font-family: "Pretendard";
   color: #666;
   font-size: 23px;
   box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);

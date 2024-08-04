@@ -1,10 +1,11 @@
-import StudentSignUpPage from "./pages/StudentSignUpPage";
-import AdminSignUpPage from "./pages/AdminSignUpPage";
+import { AppRouter } from "./Router";
+import { GlobalStyle } from "./styles/globalStyle";
 
 function App() {
   return (
     <>
-      <AdminSignUpPage />
+      <AppRouter />
+      <GlobalStyle />
     </>
   );
 }

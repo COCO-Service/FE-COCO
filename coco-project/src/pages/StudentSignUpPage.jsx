@@ -5,9 +5,15 @@ import styled from "styled-components";
 import Id from "./../components/Id";
 import PassWordReturn from "./../components/PassWordReturn";
 import Name from "./../components/Name";
-import SignUpBtn from "./../components/SignUpBtn";
+import { useNavigate } from "react-router-dom";
+import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 
 function StudentSignUpPage() {
+  const navigate = useNavigate();
+  const LoginNavClick = () => {
+    navigate("/Login");
+  };
+
   return (
     <SignUpContainer>
       <SignUpAll>
@@ -40,7 +46,7 @@ function StudentSignUpPage() {
             </FooterBtnCheck>
             <LoginAll>
               <LoginTitle>이미 계정이 있으신가요?</LoginTitle>
-              <LoginNav>로그인</LoginNav>
+              <LoginNav onClick={LoginNavClick}>로그인</LoginNav>
             </LoginAll>
           </FooterAll>
         </SignUpContents>
@@ -95,6 +101,7 @@ const LoginAll = styled.div`
   display: flex;
   justify-content: center;
   gap: 7px;
+  background-color: #ffffff;
 `;
 
 const CheckBoxText = styled.div`
@@ -164,7 +171,7 @@ const SignUpContents = styled.div`
 
 const SignUpContainer = styled.div`
   display: flex;
-  margin: 209px 0px;
+  margin: 55px 0px;
   justify-content: center;
   align-items: center;
 `;

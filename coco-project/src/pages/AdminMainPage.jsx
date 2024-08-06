@@ -2,14 +2,14 @@ import { MainBanner } from "../components/mainPage/MainBanner";
 import { Footer } from "../components/footer/Footer";
 import { MainComplain } from "../components/mainPage/MainComplain";
 import { MainNotice } from "../components/mainPage/MainNotice";
-import { Navbar } from "../components/header/Nav";
 import { MainMember } from "../components/mainPage/MainMember";
 import styled from "styled-components";
+import { AfterHeader } from "../components/header/AfterHeader";
 
 export const AdminMainPage = () => {
   return (
     <Container>
-      <Navbar isMember={true} isStudent={true} />
+      <AfterHeader isMember={true} isStudent={false} />
       <MainContainer>
         <MainBanner />
         <RightContainer>

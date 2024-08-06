@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const BoardNoticeDays = () => {
+// eslint-disable-next-line react/prop-types
+export const BoardNoticeDays = ({ days }) => {
   return (
     <Container>
-      <p>2024/02/06</p>
+      <p>{days}</p>
     </Container>
   );
 };

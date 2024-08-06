@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { BoardNoticeTitle } from "./BoardNoticeTitle";
-import { BoardNoticeWriter } from "./BoardNoticeWriter";
-import { BoardNoticeDays } from "./BoardNoticeDays";
-import { BoardNoticeProcess } from "./BoardNoticeProcess";
-import { BoardComplainTitle } from "./BoardComplainTitle";
-import { BoardComplainDays } from "./BoardComplaindays";
-import { BoardComplainWriter } from "./BoardComplainWriter";
-import { BoardComplainProcess } from "./BoardComplainProcess";
+import { BoardNoticeTitle } from "./Notice/BoardNoticeTitle";
+import { BoardNoticeWriter } from "./Notice/BoardNoticeWriter";
+import { BoardNoticeDays } from "./Notice/BoardNoticeDays";
+import { BoardNoticeProcess } from "./Notice/BoardNoticeProcess";
+import { BoardComplainTitle } from "./Complain/BoardComplainTitle";
+import { BoardComplainDays } from "./Complain/BoardComplaindays";
+import { BoardComplainWriter } from "./Complain/BoardComplainWriter";
+import { BoardComplainProcess } from "./Complain/BoardComplainProcess";
 
 const noticedummy = [
   { title: "오류수정", writer: "hansung", days: "2024/02/06", process: "-" },
@@ -23,13 +23,13 @@ const complaindummy = [
     title: "1학년 3반 전등고장",
     writer: "jiyeon",
     days: "2024/04/21",
-    process: "",
+    process: "미완",
   },
   {
     title: "1학년 4반 문고장",
     writer: "injun",
     days: "2024/07/12",
-    process: "",
+    process: "완료",
   },
 ];
 
@@ -69,7 +69,7 @@ export const BoardTable = () => {
           return <BoardNoticeProcess process={ele.process} key={idx} />;
         })}
         {complaindummy.map((ele, idx) => {
-          return <BoardComplainProcess days={ele.process} key={idx} />;
+          return <BoardComplainProcess process={ele.process} key={idx} />;
         })}
       </div>
     </Container>
@@ -80,7 +80,7 @@ const Container = styled.div`
   width: 90%;
   height: 85%;
   display: flex;
-  position: relative;
+  margin: 0 auto;
   & > div:nth-child(1) {
     width: 50%;
     height: 100%;

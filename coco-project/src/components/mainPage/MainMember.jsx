@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import profileImg1 from "../../assets/profile.png";
+import profileImg1 from "../../assets/profile1.png";
 import profileImg2 from "../../assets/profile2.png";
+import profileImg3 from "../../assets/profile3.png";
+import profileImg4 from "../../assets/profile4.png";
+import profileImg5 from "../../assets/profile5.png";
 
 export const MainMember = () => {
   return (
@@ -14,15 +17,15 @@ export const MainMember = () => {
         <p>BE 임한성</p>
       </div>
       <div>
-        <Img src={profileImg2} alt="" />
+        <Img src={profileImg3} alt="" />
         <p>BE 황인준</p>
       </div>
       <div>
-        <Img src={profileImg2} alt="" />
+        <Img src={profileImg4} alt="" />
         <p>FE 박지연</p>
       </div>
       <div>
-        <Img src={profileImg2} alt="" />
+        <Img src={profileImg5} alt="" />
         <p>FE 지도현</p>
       </div>
     </MemberContainer>

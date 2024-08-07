@@ -8,6 +8,7 @@ import { StudentWritingPage } from "./pages/StudentWritingPage";
 import { AdminWritingPage } from "./pages/AdminWritingPage";
 import { BoardPage } from "./pages/BoardPage";
 import { AdminMainPage } from "./pages/AdminMainPage";
+import { AdminWritingPage } from "./pages/AdminWritingPage";
 
 export const AppRouter = () => {
   return (
@@ -25,5 +26,7 @@ export const AppRouter = () => {
       <Route path="/adminMain" element={<AdminMainPage />} />
       <Route path="*" element={<div>404</div>} />
     </Routes>
+        <Route path="/AdminWritingPage" element={<AdminWritingPage />} />
+        <Route path="/StudentWritingPage" element={<StudentWritingPage />} />
   );
 };

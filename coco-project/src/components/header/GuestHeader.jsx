@@ -1,30 +1,20 @@
 import styled from "styled-components";
 import COCOLogo from "../../assets/COCOLogo.svg";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { css } from "styled-components";
 
 export const GuestHeader = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
+
   return (
     <HeaderAll>
-      <Logo src={COCOLogo} onClick={() => navigate("/main")} />
+      <Logo src={COCOLogo} />
       <NavAll>
-        <BoardNav
-          pathname={pathname}
-          onClick={() => navigate("/guestboardpage")}
-        >
-          게시판
-        </BoardNav>
-        <WriteNav pathname={pathname} onClick={() => navigate("/login")}>
-          글 작성
-        </WriteNav>
-        <MyPageNav pathname={pathname} onClick={() => navigate("/login")}>
-          마이페이지
-        </MyPageNav>
+        <BoardNav pathname={pathname}>게시판</BoardNav>
+        <WriteNav pathname={pathname}>글 작성</WriteNav>
+        <MyPageNav pathname={pathname}>마이페이지</MyPageNav>
       </NavAll>
-      <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
+      <LogoutBtn>로그인</LogoutBtn>
     </HeaderAll>
   );
 };
@@ -33,7 +23,6 @@ const Logo = styled.img`
   display: flex;
   align-items: center;
   margin: 52px;
-  cursor: pointer;
 `;
 
 const HeaderAll = styled.div`
@@ -41,8 +30,8 @@ const HeaderAll = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 525px;
   height: 70px;
 `;
 
@@ -57,10 +46,9 @@ const BoardNav = styled.div`
   font-size: 20px;
   font-weight: 300;
   cursor: pointer;
+
   ${({ pathname }) =>
-    pathname === "/guestboardpage" ||
-    pathname === "/guestcomplainpage" ||
-    pathname === "/guestnoticepage"
+    pathname === "/"
       ? css`
           color: #4f4cff;
           font-weight: 700;
@@ -101,7 +89,7 @@ const MyPageNav = styled.div`
         `}
 `;
 
-const LoginBtn = styled.div`
+const LogoutBtn = styled.div`
   border-radius: 6px;
   background: #4f4cff;
   width: 143px;

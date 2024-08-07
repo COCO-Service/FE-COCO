@@ -9,7 +9,12 @@ import { BoardComplainWriter } from "./Complain/BoardComplainWriter";
 import { BoardComplainProcess } from "./Complain/BoardComplainProcess";
 
 const noticedummy = [
-  { title: "오류수정", writer: "hansung", days: "2024/02/06", process: "-" },
+  {
+    title: "오류수정",
+    writer: "hansung",
+    days: "2024/02/06",
+    process: "-",
+  },
   {
     title: "민원 확인 완료",
     writer: "dohyun",

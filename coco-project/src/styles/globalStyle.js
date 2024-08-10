@@ -40,7 +40,6 @@ input {
 body {
     line-height: 1;
     height: 100%;
-    background-color: #eff4ff;
 }
 
 menu, ol, ul {

@@ -4,32 +4,61 @@ import { WritePlace } from "../components/WritePage/WritePlace";
 import { WriteDetail } from "./../components/WritePage/WriteDetail";
 import { WriteAttachment } from "./../components/WritePage/WriteAttachment";
 import { WriteDate } from "../components/WritePage/WriteDate";
-import { WriteHeader } from "../components/header/WriteHeader";
+import { AfterHeader } from "../components/header/AfterHeader";
+import { Footer } from "../components/footer/Footer";
 
 export const StudentWritingPage = () => {
   return (
-    <WriteAll>
-      <WriteHeader />
-      <WriteHeadAll>
-        <WriteTitle />
-        <WritePlace />
-        <AttachmentDateAll>
-          <WriteAttachment />
-          <WriteDate />
-        </AttachmentDateAll>
-      </WriteHeadAll>
-      <WriteDetail />
-    </WriteAll>
+    <>
+      <WriteAll>
+        <AfterHeader isMember={true} isStudent={true} />
+        <ContentsAll>
+          <WriteHeadAll>
+            <WriteTitle />
+            <WritePlace />
+            <AttachmentDateAll>
+              <WriteAttachment />
+              <WriteDate />
+            </AttachmentDateAll>
+          </WriteHeadAll>
+          <WriteDetail />
+        </ContentsAll>
+        <CompleteBtn>작성완료</CompleteBtn>
+      </WriteAll>
+      <Footer />
+    </>
   );
 };
 
+const ContentsAll = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+`;
+
+const CompleteBtn = styled.div`
+  width: 350px;
+  height: 75px;
+  padding: 18px 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 37.5px;
+  color: #ffffff;
+  font-size: 26px;
+  border-radius: 10px;
+  background: #4f4cff;
+  cursor: pointer;
+`;
+
 const WriteAll = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  margin-bottom: 97px;
+  gap: 71px;
+  background-color: white;
 `;
 
 const WriteHeadAll = styled.div`

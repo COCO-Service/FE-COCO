@@ -5,24 +5,28 @@ import { WriteDetail } from "./../components/WritePage/WriteDetail";
 import { WriteAttachment } from "./../components/WritePage/WriteAttachment";
 import { WriteDate } from "../components/WritePage/WriteDate";
 import { AfterHeader } from "../components/header/AfterHeader";
+import { Footer } from "../components/footer/Footer";
 
 export const StudentWritingPage = () => {
   return (
-    <WriteAll>
-      <AfterHeader />
-      <ContentsAll>
-        <WriteHeadAll>
-          <WriteTitle />
-          <WritePlace />
-          <AttachmentDateAll>
-            <WriteAttachment />
-            <WriteDate />
-          </AttachmentDateAll>
-        </WriteHeadAll>
-        <WriteDetail />
-      </ContentsAll>
-      <CompleteBtn>작성완료</CompleteBtn>
-    </WriteAll>
+    <>
+      <WriteAll>
+        <AfterHeader isMember={true} isStudent={true} />
+        <ContentsAll>
+          <WriteHeadAll>
+            <WriteTitle />
+            <WritePlace />
+            <AttachmentDateAll>
+              <WriteAttachment />
+              <WriteDate />
+            </AttachmentDateAll>
+          </WriteHeadAll>
+          <WriteDetail />
+        </ContentsAll>
+        <CompleteBtn>작성완료</CompleteBtn>
+      </WriteAll>
+      <Footer />
+    </>
   );
 };
 
@@ -48,12 +52,13 @@ const CompleteBtn = styled.div`
 `;
 
 const WriteAll = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 71px;
-  margin-bottom: 97px;
+  background-color: white;
 `;
 
 const WriteHeadAll = styled.div`

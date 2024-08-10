@@ -10,32 +10,44 @@ export const AfterHeader = ({ isMember, isStudent }) => {
 
   return (
     <HeaderAll>
-      <Logo src={COCOLogo} alt="COCO Logo" />
+      <Logo src={COCOLogo} alt="COCO Logo" onClick={() => navigate("/main")} />
       <NavAll>
         <BoardNav
           pathname={pathname}
-          onClick={() => navigate("/adminboardpage")}
+          onClick={
+            isStudent
+              ? () => navigate("/studentBoardPage1")
+              : () => navigate("/adminBoardPage1")
+          }
         >
           게시판
         </BoardNav>
-        <WriteNav pathname={pathname} onClick={() => navigate("/writingpage")}>
+        <WriteNav
+          pathname={pathname}
+          onClick={
+            isStudent
+              ? () => navigate("/studentWritingpage")
+              : () => navigate("/adminWritingPage")
+          }
+        >
           글 작성
         </WriteNav>
-        <MyPageNav pathname={pathname} onClick={() => navigate("/mypage")}>
+        <MyPageNav
+          pathname={pathname}
+          onClick={
+            isStudent
+              ? () => navigate("/studentMyPage")
+              : () => navigate("/adminMyComplainPage")
+          }
+        >
           마이페이지
         </MyPageNav>
       </NavAll>
-      {isMember ? (
+      {isMember && (
         <Profile>
-          <img
-            src={isStudent ? "student.jpg" : "teacher.jpg"}
-            alt="프로필 사진"
-          />
           <p>{`name ${isStudent ? "학생" : "선생님"}`}</p>
           <LogoutBtn>로그아웃</LogoutBtn>
         </Profile>
-      ) : (
-        <LoginBtn>로그인</LoginBtn>
       )}
     </HeaderAll>
   );
@@ -50,6 +62,7 @@ const Logo = styled.img`
   display: flex;
   align-items: center;
   margin: 52px;
+  cursor: pointer;
 `;
 
 const HeaderAll = styled.div`
@@ -76,17 +89,6 @@ const Profile = styled.div`
   }
 `;
 
-const LoginBtn = styled.button`
-  background-color: #4f4cff;
-  color: white;
-  border-radius: 6px;
-  width: 120px;
-  height: 38px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-`;
-
 const NavAll = styled.div`
   display: flex;
   justify-content: center;
@@ -94,12 +96,12 @@ const NavAll = styled.div`
   gap: 120px;
 `;
 
-const NavItem = styled.div`
+const BoardNav = styled.div`
   font-size: 20px;
   font-weight: 300;
   cursor: pointer;
-  ${({ isActive }) =>
-    isActive
+  ${({ pathname }) =>
+    pathname.includes("1")
       ? css`
           color: #4f4cff;
           font-weight: 700;
@@ -108,10 +110,34 @@ const NavItem = styled.div`
           color: #111111;
         `}
 `;
-
-const BoardNav = styled(NavItem)``;
-const WriteNav = styled(NavItem)``;
-const MyPageNav = styled(NavItem)``;
+const WriteNav = styled.div`
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  ${({ pathname }) =>
+    pathname.includes("Writing")
+      ? css`
+          color: #4f4cff;
+          font-weight: 700;
+        `
+      : css`
+          color: #111111;
+        `}
+`;
+const MyPageNav = styled.div`
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  ${({ pathname }) =>
+    pathname.includes("My")
+      ? css`
+          color: #4f4cff;
+          font-weight: 700;
+        `
+      : css`
+          color: #111111;
+        `}
+`;
 
 const LogoutBtn = styled.div`
   border-radius: 6px;

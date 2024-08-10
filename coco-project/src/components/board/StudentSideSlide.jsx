@@ -2,12 +2,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const menus = [
-  { name: "게시판", path: "/guestboardpage" },
-  { name: "민원 확인", path: "/guestcomplainpage" },
-  { name: "공지 확인", path: "/guestnoticepage" },
+  { name: "게시판", path: "/studentBoardPage1" },
+  { name: "민원 확인", path: "/studentComplainPage1" },
+  { name: "공지 확인", path: "/studentNoticePage1" },
 ];
 
-export const SideSlide = () => {
+export const StudentSideSlide = () => {
   const { pathname: currentRoute } = useLocation();
   const navigate = useNavigate();
 

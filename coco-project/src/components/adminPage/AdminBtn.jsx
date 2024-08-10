@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function AdminBtn() {
   const navigate = useNavigate();
   const AdminBtnClick = () => {
-    navigate("/AdminSignUp");
+    navigate("/adminSignUp");
   };
   return (
     <StudentWindowAll>

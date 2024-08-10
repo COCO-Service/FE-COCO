@@ -3,30 +3,46 @@ import { AdminSignUpPage } from "./pages/AdminSignUpPage";
 import { SignUpStartPage } from "./pages/SignUpStartPage";
 import { StudentSignUpPage } from "./pages/StudentSignUpPage";
 import { LoginPage } from "./pages/LoginPage";
-import { GuestMainPage } from "./pages/GuestMainPage";
 import { StudentWritingPage } from "./pages/StudentWritingPage";
 import { AdminWritingPage } from "./pages/AdminWritingPage";
-import { BoardPage } from "./pages/BoardPage";
-import { AdminMainPage } from "./pages/AdminMainPage";
-import { AdminWritingPage } from "./pages/AdminWritingPage";
+import { GuestBoardPage } from "./pages/GuestBoardPage";
+import { StudentMyPage } from "./pages/StudentMyPage";
+import { AdminComplainPage } from "./pages/AdminComplainPage";
+import { AdminNoticePage } from "./pages/AdminNoticePage";
+import { MainPage } from "./pages/MainPage";
+import { AdminBoardPage } from "./pages/AdminBoardPage";
+import { StudentBoardPage } from "./pages/StudentBoardPage";
+import { StudentNoticePage } from "./pages/StudentNoticePage";
+import { StudentComplainPage } from "./pages/StudentComplainPage";
+import { AdminMyComplainPage } from "./pages/AdminMyComplainPage";
+import { AdminMyNoticePage } from "./pages/AdminMyNoticePage";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/adminSignup" element={<AdminSignUpPage />} />
       <Route path="/signupSelect" element={<SignUpStartPage />} />
       <Route path="/studentSignUp" element={<StudentSignUpPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/main" element={<GuestMainPage />} />
       <Route path="/studentWritingPage" element={<StudentWritingPage />} />
+      <Route path="/studentMyPage" element={<StudentMyPage />} />
+      <Route path="/studentBoardPage1" element={<StudentBoardPage />} />
+      <Route path="/studentNoticePage1" element={<StudentNoticePage />} />
+      <Route path="/studentComplainPage1" element={<StudentComplainPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/main"
+        element={<MainPage isMember={true} isStudent={false} />}
+      />
+      <Route path="/guestBoardPage1" element={<GuestBoardPage />} />
+      <Route path="/guestComplainPage1" element={<GuestBoardPage />} />
+      <Route path="/guestNoticePage1" element={<GuestBoardPage />} />
       <Route path="/adminWritingPage" element={<AdminWritingPage />} />
-      <Route path="/guestBoardPage" element={<BoardPage />} />
-      <Route path="/guestComplainPage" element={<BoardPage />} />
-      <Route path="/guestNoticePage" element={<BoardPage />} />
-      <Route path="/adminMain" element={<AdminMainPage />} />
+      <Route path="/adminSignup" element={<AdminSignUpPage />} />
+      <Route path="/adminBoardPage1" element={<AdminBoardPage />} />
+      <Route path="/adminComplainPage1" element={<AdminComplainPage />} />
+      <Route path="/adminNoticePage1" element={<AdminNoticePage />} />
+      <Route path="/adminMyComplainPage" element={<AdminMyComplainPage />} />
+      <Route path="/adminMyNoticePage" element={<AdminMyNoticePage />} />
       <Route path="*" element={<div>404</div>} />
     </Routes>
-        <Route path="/AdminWritingPage" element={<AdminWritingPage />} />
-        <Route path="/StudentWritingPage" element={<StudentWritingPage />} />
   );
 };

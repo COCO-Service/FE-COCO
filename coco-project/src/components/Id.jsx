@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-function Id() {
+function Id({ ...props }) {
   return (
     <IdAll>
       <IdTitle>아이디</IdTitle>
-      <IdInput type="text" placeholder="아이디를 입력하세요"></IdInput>
+      <IdInput
+        type="text"
+        placeholder="아이디를 입력하세요"
+        {...props}
+      ></IdInput>
     </IdAll>
   );
 }

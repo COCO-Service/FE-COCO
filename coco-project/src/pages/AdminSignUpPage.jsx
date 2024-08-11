@@ -2,13 +2,45 @@ import Logo from "../assets/COCO.svg";
 import PassWord from "../components/PassWord";
 import styled from "styled-components";
 import Id from "./../components/Id";
-import PassWordReturn from "./../components/PassWordReturn";
+import { PassWordReturn } from "../components/PassWordReturn";
 import Name from "./../components/Name";
 import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
 import AdminNum from "./../components/adminPage/AdminNum";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const AdminSignUpPage = () => {
+  const [password, setPassword] = useState("");
+  const [passwordReturn, setPasswordReturn] = useState("");
+
+  const [inputs, setInputs] = useState({
+    id: "",
+    password1: "",
+    password2: "",
+  });
+
+  const { id, password1, password2 } = inputs;
+
+  const onChange = (e) => {
+    const { value, name } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  useEffect(() => {
+    // console.log(password1, password2)
+    if (password1 != "" && password2 != "") {
+      if (password1 == password2) {
+        console.log(inputs);
+      } else {
+        console.log("비밀번호가 다릅니다. 다시 입력해주세요");
+      }
+    }
+  }, [password1, password2, id]);
+
   const navigate = useNavigate();
   const LoginNavClick = () => {
     navigate("/Login");
@@ -29,9 +61,21 @@ export const AdminSignUpPage = () => {
               </SignUpSubHead>
             </SignUpAllHead>
             <InputAll>
-              <Id />
-              <PassWord />
-              <PassWordReturn />
+              <Id onChange={onChange} value={id} name="id" />
+              <PassWord
+                onChange={onChange}
+                value={password1}
+                name="password1"
+                $password={password}
+                $setPassword={setPassword}
+              />
+              <PassWordReturn
+                onChange={onChange}
+                value={password2}
+                name="password2"
+                $passwordReturn={passwordReturn}
+                $setPasswordReturn={setPasswordReturn}
+              />
               <Name />
               <AdminNum />
             </InputAll>

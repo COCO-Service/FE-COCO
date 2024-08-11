@@ -5,7 +5,7 @@ export const WriteAttachment = () => {
     <AttachmentAll>
       <Title>첨부파일</Title>
       <AttachmentInput
-        type="text"
+        type="file"
         placeholder="파일을 첨부하세요"
       ></AttachmentInput>
     </AttachmentAll>
@@ -16,6 +16,7 @@ const AttachmentAll = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 `;
 
 const Title = styled.div`
@@ -24,6 +25,22 @@ const Title = styled.div`
 `;
 
 const AttachmentInput = styled.input`
+  &::file-selector-button {
+    position: absolute;
+    top: 129px;
+    left: 0px;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #4f4cff;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+
   width: 995px;
   padding: 20px 0px 20px 32px;
   border-radius: 10px;

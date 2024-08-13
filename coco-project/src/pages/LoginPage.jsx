@@ -4,12 +4,30 @@ import styled from "styled-components";
 import Id from "./../components/Id";
 import LoginBtn from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function LoginPage() {
   const navigate = useNavigate();
   const SignUpNavClick = () => {
     navigate("/SignUpStart");
   };
+
+  const [inputs, setInputs] = useState({
+    id: "",
+    password: "",
+  });
+
+  const { id, password } = inputs;
+
+  const onChange = (e) => {
+    const { value, name } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  console.log(inputs);
 
   return (
     <LoginContainer>
@@ -24,8 +42,8 @@ function LoginPage() {
               </LoginSubHead>
             </LoginAllHead>
             <InputAll>
-              <Id />
-              <PassWord />
+              <Id onChange={onChange} value={id} name="id" />
+              <PassWord onChange={onChange} value={password} name="password" />
             </InputAll>
           </LoginContentsAll>
           <FooterAll>

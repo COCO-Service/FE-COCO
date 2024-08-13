@@ -3,7 +3,7 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
-function PassWord({ password, setPassword }) {
+function PassWord({ ...props }) {
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePassword = (e) => {
@@ -21,9 +21,8 @@ function PassWord({ password, setPassword }) {
         <PassWordInput
           type={showPswd ? "text" : "password"}
           placeholder="비밀번호를 입력하세요"
-          onChange={handleChangePassword}
-          value={password}
           required
+          {...props}
         />
         <PassWordEyes onClick={toggleShowPswd} className="PassWordEyes">
           {showPswd ? (

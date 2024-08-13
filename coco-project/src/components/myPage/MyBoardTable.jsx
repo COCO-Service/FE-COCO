@@ -46,9 +46,11 @@ export const MyBoardTable = () => {
           })}
         </NoticeContents>
 
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainTitle title={ele.title} key={idx} />;
-        })}
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainTitle title={ele.title} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
       <div>
         <Days>날짜</Days>
@@ -57,9 +59,11 @@ export const MyBoardTable = () => {
             return <BoardNoticeDays days={ele.days} key={idx} />;
           })}
         </NoticeContents>
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainDays days={ele.days} key={idx} />;
-        })}
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainDays days={ele.days} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
       <div>
         <Process>처리 여부</Process>
@@ -68,9 +72,11 @@ export const MyBoardTable = () => {
             return <BoardNoticeProcess process={ele.process} key={idx} />;
           })}
         </NoticeContents>
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainProcess process={ele.process} key={idx} />;
-        })}
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainProcess process={ele.process} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
     </Container>
   );
@@ -134,7 +140,18 @@ const Process = styled.div`
 
 const NoticeContents = styled.div`
   ${({ pathname }) =>
-    pathname === "/studentMyPage"
+    pathname === "/studentMyPage" || pathname === "/adminMyComplainPage"
+      ? css`
+          display: none;
+        `
+      : css`
+          display: block;
+        `}
+`;
+
+const ComplainContents = styled.div`
+  ${({ pathname }) =>
+    pathname === "/adminMyNoticePage"
       ? css`
           display: none;
         `

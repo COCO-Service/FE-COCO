@@ -4,7 +4,7 @@ import { Footer } from "../components/footer/Footer";
 import { BoardContainer } from "../components/board/BoardContainer";
 import { AfterHeader } from "../components/header/AfterHeader";
 
-export const StudentBoardPage = () => {
+export const StudentNoticePage = () => {
   return (
     <Container>
       <AfterHeader isMember={true} isStudent={true} />

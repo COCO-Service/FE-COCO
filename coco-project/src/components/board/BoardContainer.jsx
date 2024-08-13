@@ -1,11 +1,22 @@
 import styled from "styled-components";
 import { BoardTable } from "./BoardTable";
+import { useLocation } from "react-router-dom";
 
 export const BoardContainer = () => {
+  const { pathname } = useLocation();
   return (
     <Container>
-      <p>게시판</p>
-      <BoardTable></BoardTable>
+      {pathname === "/adminComplainPage1" ||
+      pathname === "/adminNoticePage1" ? (
+        pathname === "/adminNoticePage1" ? (
+          <p>공지 확인</p>
+        ) : (
+          <p>민원 확인</p>
+        )
+      ) : (
+        <p>게시판</p>
+      )}
+      <BoardTable />
     </Container>
   );
 };

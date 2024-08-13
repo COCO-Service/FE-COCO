@@ -2,11 +2,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const menus = [
-  { name: "내가 작성한 민원", path: "/adminMyComplainPage" },
-  { name: "내가 작성한 공지", path: "/adminMyNoticePage" },
+  { name: "게시판", path: "/adminBoardPage1" },
+  { name: "민원 확인", path: "/adminComplainPage1" },
+  { name: "공지 확인", path: "/adminNoticePage1" },
 ];
 
-export const AdminPageSideSlide = () => {
+export const AdminSideSlide = () => {
   const { pathname: currentRoute } = useLocation();
   const navigate = useNavigate();
 
@@ -29,8 +30,8 @@ export const AdminPageSideSlide = () => {
 
 const Container = styled.div`
   background-color: white;
-  width: 320px;
-  height: 140px;
+  width: 202px;
+  height: 164px;
   display: flex;
   border: 0.5px solid #878787;
   border-radius: 10px;
@@ -38,12 +39,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-left: 20px;
+  gap: 10px;
   & > div {
     border-radius: 10px;
     width: 90%;
-    height: 37%;
+    height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useLocation } from "react-router-dom";
 import { BoardNoticeTitle } from "./Notice/BoardNoticeTitle";
 import { BoardNoticeWriter } from "./Notice/BoardNoticeWriter";
 import { BoardNoticeDays } from "./Notice/BoardNoticeDays";
@@ -39,43 +40,62 @@ const complaindummy = [
 ];
 
 export const BoardTable = () => {
+  const { pathname } = useLocation();
+
   return (
     <Container>
       <div>
         <Title>제목</Title>
-        {noticedummy.map((ele, idx) => {
-          return <BoardNoticeTitle title={ele.title} key={idx} />;
-        })}
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainTitle title={ele.title} key={idx} />;
-        })}
+
+        <NoticeContents pathname={pathname}>
+          {noticedummy.map((ele, idx) => {
+            return <BoardNoticeTitle title={ele.title} key={idx} />;
+          })}
+        </NoticeContents>
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainTitle title={ele.title} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
       <div>
         <Writer>작성자</Writer>
-        {noticedummy.map((ele, idx) => {
-          return <BoardNoticeWriter writer={ele.writer} key={idx} />;
-        })}
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainWriter writer={ele.writer} key={idx} />;
-        })}
+        <NoticeContents pathname={pathname}>
+          {noticedummy.map((ele, idx) => {
+            return <BoardNoticeWriter writer={ele.writer} key={idx} />;
+          })}
+        </NoticeContents>
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainWriter writer={ele.writer} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
       <div>
         <Days>날짜</Days>
-        {noticedummy.map((ele, idx) => {
-          return <BoardNoticeDays days={ele.days} key={idx} />;
-        })}
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainDays days={ele.days} key={idx} />;
-        })}
+        <NoticeContents pathname={pathname}>
+          {noticedummy.map((ele, idx) => {
+            return <BoardNoticeDays days={ele.days} key={idx} />;
+          })}
+        </NoticeContents>
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainDays days={ele.days} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
       <div>
         <Process>처리 여부</Process>
-        {noticedummy.map((ele, idx) => {
-          return <BoardNoticeProcess process={ele.process} key={idx} />;
-        })}
-        {complaindummy.map((ele, idx) => {
-          return <BoardComplainProcess process={ele.process} key={idx} />;
-        })}
+        <NoticeContents pathname={pathname}>
+          {noticedummy.map((ele, idx) => {
+            return <BoardNoticeProcess process={ele.process} key={idx} />;
+          })}
+        </NoticeContents>
+        <ComplainContents pathname={pathname}>
+          {complaindummy.map((ele, idx) => {
+            return <BoardComplainProcess process={ele.process} key={idx} />;
+          })}
+        </ComplainContents>
       </div>
     </Container>
   );
@@ -150,4 +170,26 @@ const Process = styled.div`
   border: solid 1px #cacaca;
   border-left: none;
   border-right: none;
+`;
+
+const NoticeContents = styled.div`
+  ${({ pathname }) =>
+    pathname === "/adminComplainPage1"
+      ? css`
+          display: none;
+        `
+      : css`
+          display: block;
+        `}
+`;
+
+const ComplainContents = styled.div`
+  ${({ pathname }) =>
+    pathname === "/adminNoticePage1"
+      ? css`
+          display: none;
+        `
+      : css`
+          display: block;
+        `}
 `;

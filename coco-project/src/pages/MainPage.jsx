@@ -4,12 +4,23 @@ import { MainComplain } from "../components/mainPage/MainComplain";
 import { MainNotice } from "../components/mainPage/MainNotice";
 import { GuestHeader } from "../components/header/GuestHeader";
 import { MainMember } from "../components/mainPage/MainMember";
+import { AfterHeader } from "../components/header/AfterHeader";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-export const GuestMainPage = () => {
+export const MainPage = ({ isMember, isStudent }) => {
+  console.log(isMember, isStudent);
   return (
     <Container>
-      <GuestHeader />
+      {isMember ? (
+        isStudent ? (
+          <AfterHeader isMember={true} isStudent={true} />
+        ) : (
+          <AfterHeader isMember={true} isStudent={false} />
+        )
+      ) : (
+        <GuestHeader />
+      )}
       <MainContainer>
         <MainBanner />
         <RightContainer>
@@ -21,6 +32,11 @@ export const GuestMainPage = () => {
       <Footer />
     </Container>
   );
+};
+
+MainPage.propTypes = {
+  isMember: PropTypes.bool.isRequired,
+  isStudent: PropTypes.bool.isRequired,
 };
 
 const Container = styled.div`

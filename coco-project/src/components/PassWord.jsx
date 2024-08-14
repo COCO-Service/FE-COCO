@@ -3,12 +3,7 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
-<<<<<<< HEAD
-function PassWord({ ...props }) {
-=======
-// eslint-disable-next-line react/prop-types
-function PassWord({ password, setPassword }) {
->>>>>>> 1ced2e6caed4d0a7c85a8eaffef7706648b4ff3d
+export const PassWord = ({ password, setPassword, ...props }) => {
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePassword = (e) => {
@@ -39,7 +34,7 @@ function PassWord({ password, setPassword }) {
       </FakePassWordDiv>
     </PassWordAll>
   );
-}
+};
 
 const FakePassWordDiv = styled.div`
   width: 536.64px;
@@ -73,5 +68,3 @@ const PassWordInput = styled.input`
   border: 0.6px solid #282828;
   outline: none;
 `;
-
-export default PassWord;

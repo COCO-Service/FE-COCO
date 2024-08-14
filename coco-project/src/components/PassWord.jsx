@@ -3,7 +3,12 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
+<<<<<<< HEAD
+function PassWord({ ...props }) {
+=======
+// eslint-disable-next-line react/prop-types
 function PassWord({ password, setPassword }) {
+>>>>>>> 1ced2e6caed4d0a7c85a8eaffef7706648b4ff3d
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePassword = (e) => {
@@ -21,9 +26,8 @@ function PassWord({ password, setPassword }) {
         <PassWordInput
           type={showPswd ? "text" : "password"}
           placeholder="비밀번호를 입력하세요"
-          onChange={handleChangePassword}
-          value={password}
           required
+          {...props}
         />
         <PassWordEyes onClick={toggleShowPswd} className="PassWordEyes">
           {showPswd ? (
@@ -45,8 +49,8 @@ const FakePassWordDiv = styled.div`
 
 const PassWordEyes = styled.div`
   position: absolute;
-  top: 23px;
-  right: 22.57px;
+  top: 21px;
+  right: 52px;
   cursor: pointer;
 `;
 
@@ -64,7 +68,7 @@ const PassWordAll = styled.div`
 
 const PassWordInput = styled.input`
   width: 502.574px;
-  padding: 22.57px 0px 26.52px 32.08px;
+  padding: 22px 0px 22px 32.08px;
   border-radius: 6px;
   border: 0.6px solid #282828;
   outline: none;

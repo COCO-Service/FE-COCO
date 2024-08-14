@@ -1,9 +1,9 @@
-import StudentSignUpPage from "./pages/StudentSignUpPage";
+import { AppRouter } from "./Router";
 
 function App() {
   return (
     <>
-      <StudentSignUpPage />
+      <AppRouter />
     </>
   );
 }

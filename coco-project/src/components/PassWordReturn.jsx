@@ -3,11 +3,15 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
-function PassWordReturn({ passwordReturn, setPasswordReturn }) {
+export const PassWordReturn = ({
+  $passwordReturn,
+  $setPasswordReturn,
+  ...props
+}) => {
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePasswordReturn = (e) => {
-    setPasswordReturn(e.target.value);
+    $setPasswordReturn(e.target.value);
   };
 
   const toggleShowPswd = () => {
@@ -22,8 +26,9 @@ function PassWordReturn({ passwordReturn, setPasswordReturn }) {
           type={showPswd ? "text" : "password"}
           placeholder="비밀번호를 다시 입력하세요"
           onChange={handleChangePasswordReturn}
-          value={passwordReturn}
+          value={$passwordReturn}
           required
+          {...props}
         />
         <PassWordReturnEyes
           onClick={toggleShowPswd}
@@ -38,7 +43,7 @@ function PassWordReturn({ passwordReturn, setPasswordReturn }) {
       </FakePassWordReturnDiv>
     </PassWordReturnAll>
   );
-}
+};
 
 const FakePassWordReturnDiv = styled.div`
   width: 536.64px;
@@ -48,8 +53,8 @@ const FakePassWordReturnDiv = styled.div`
 
 const PassWordReturnEyes = styled.div`
   position: absolute;
-  top: 23px;
-  right: 22.57px;
+  top: 21px;
+  right: 52px;
   cursor: pointer;
 `;
 
@@ -67,7 +72,7 @@ const PassWordReturnAll = styled.div`
 
 const PassWordReturnInput = styled.input`
   width: 502.574px;
-  padding: 22.57px 0px 26.52px 32.08px;
+  padding: 22px 0px 22px 32.08px;
   border-radius: 6px;
   border: 0.6px solid #282828;
   outline: none;

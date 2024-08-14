@@ -1,7 +1,7 @@
 import Logo from "../assets/COCO.svg";
-import PassWord from "../components/PassWord";
+import { PassWord } from "../components/PassWord";
 import styled from "styled-components";
-import Id from "./../components/Id";
+import { Id } from "./../components/Id";
 import { LoginBtn } from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import { useState } from "react";
 export const LoginPage = () => {
   const navigate = useNavigate();
   const SignUpNavClick = () => {
-    navigate("/signupSelect");
+    navigate("/signup");
   };
 
   const [inputs, setInputs] = useState({

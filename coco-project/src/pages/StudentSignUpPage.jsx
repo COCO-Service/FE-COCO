@@ -1,21 +1,24 @@
+// 사용하지 않는 페이지입니다.
+
 import Logo from "../assets/COCO.svg";
-import PassWord from "../components/PassWord";
+import { PassWord } from "../components/PassWord";
 import Class from "../components/Class";
 import styled from "styled-components";
-import Id from "./../components/Id";
-import { PassWordReturn } from "../components/PassWordReturn";
-import Name from "./../components/Name";
+import { Id } from "./../components/Id";
+import { Name } from "./../components/Name";
 import { useNavigate } from "react-router-dom";
 import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 import { useEffect, useState } from "react";
+import { PassWordReturn } from "./../components/PassWordReturn";
 
 export const StudentSignUpPage = () => {
   const navigate = useNavigate();
   const LoginNavClick = () => {
-    navigate("/Login");
+    navigate("/login");
   };
 
-  // const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordReturn, setPasswordReturn] = useState("");
 
   const [inputs, setInputs] = useState({
     id: "",

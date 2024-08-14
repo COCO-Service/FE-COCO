@@ -5,38 +5,42 @@ import { WriteDetail } from "./../components/WritePage/WriteDetail";
 import { WriteAttachment } from "./../components/WritePage/WriteAttachment";
 import { WriteDate } from "../components/WritePage/WriteDate";
 import { AfterHeader } from "../components/header/AfterHeader";
+import { Footer } from "../components/footer/Footer";
 
 export const AdminWritingPage = () => {
   return (
-    <WriteAll>
-      <AfterHeader />
+    <>
+      <WriteAll>
+        <AfterHeader isMember={true} isStudent={false} />
 
-      <ContentsAll>
-        <WriteHeadAll>
-          <NoteHeaderAll>
-            <WriteTitle />
-            <WritePlace />
-            <AttachmentDateAll>
-              <WriteAttachment />
-              <WriteDate />
-            </AttachmentDateAll>
-          </NoteHeaderAll>
-          <NoticeComplaintCheck>
-            <LabelAll>
-              민원 작성
-              <Complaint name="catagory" type="radio" />
-            </LabelAll>
-            <LabelAll>
-              공지 작성
-              <Notice name="catagory" type="radio" />
-            </LabelAll>
-          </NoticeComplaintCheck>
-        </WriteHeadAll>
-        <WriteDetail />
-      </ContentsAll>
+        <ContentsAll>
+          <WriteHeadAll>
+            <NoteHeaderAll>
+              <WriteTitle />
+              <WritePlace />
+              <AttachmentDateAll>
+                <WriteAttachment />
+                <WriteDate />
+              </AttachmentDateAll>
+            </NoteHeaderAll>
+            <NoticeComplaintCheck>
+              <LabelAll>
+                민원 작성
+                <Complaint name="catagory" type="radio" />
+              </LabelAll>
+              <LabelAll>
+                공지 작성
+                <Notice name="catagory" type="radio" />
+              </LabelAll>
+            </NoticeComplaintCheck>
+          </WriteHeadAll>
+          <WriteDetail />
+        </ContentsAll>
 
-      <CompleteBtn>작성완료</CompleteBtn>
-    </WriteAll>
+        <CompleteBtn>작성완료</CompleteBtn>
+      </WriteAll>
+      <Footer />
+    </>
   );
 };
 

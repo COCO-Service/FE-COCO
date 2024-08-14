@@ -46,10 +46,12 @@ const FooterUpperContainer = styled.div`
 
   & > div > :nth-child(3) {
     color: #095a20;
+    background-color: transparent;
   }
   & > div {
     display: flex;
     gap: 30px;
+    background-color: transparent;
   }
 `;
 
@@ -65,15 +67,18 @@ const FooterUnderContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: transparent;
   }
   & > div:nth-child(1) > p:nth-child(1) {
     font-size: 15px;
     color: black;
     font-weight: 700;
+    background-color: transparent;
   }
   & > div:nth-child(2) > p:nth-child(1) {
     font-size: 20px;
     color: black;
     font-weight: 600;
+    background-color: transparent;
   }
 `;

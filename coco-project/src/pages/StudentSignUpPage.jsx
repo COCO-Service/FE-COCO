@@ -9,9 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 import { useEffect, useState } from "react";
 
-function StudentSignUpPage() {
-  const [password, setPassword] = useState("");
-  const [passwordReturn, setPasswordReturn] = useState("");
+export const StudentSignUpPage = () => {
   const navigate = useNavigate();
   const LoginNavClick = () => {
     navigate("/Login");
@@ -97,7 +95,7 @@ function StudentSignUpPage() {
       </SignUpAll>
     </SignUpContainer>
   );
-}
+};
 
 const FooterAll = styled.div`
   display: flex;
@@ -219,5 +217,3 @@ const SignUpContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export default StudentSignUpPage;

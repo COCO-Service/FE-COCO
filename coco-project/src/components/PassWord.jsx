@@ -3,7 +3,12 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
+<<<<<<< HEAD
 function PassWord({ ...props }) {
+=======
+// eslint-disable-next-line react/prop-types
+function PassWord({ password, setPassword }) {
+>>>>>>> 1ced2e6caed4d0a7c85a8eaffef7706648b4ff3d
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePassword = (e) => {

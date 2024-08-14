@@ -3,13 +3,17 @@ import { Profile } from "../components/adminPage/Profile";
 import { AfterHeader } from "../components/header/AfterHeader";
 import { StudentComplain } from "../components/myPage/StudentComplain";
 import { Footer } from "../components/footer/Footer";
+import { AdminPageSideSlide } from "../components/myPage/AdminPageSideSlide";
 
-export const StudentMyPage = () => {
+export const AdminMyComplainPage = () => {
   return (
     <Container>
-      <AfterHeader isMember={true} isStudent={true} />
+      <AfterHeader isMember={true} isStudent={false} />
       <MainContainer>
-        <Profile />
+        <Main1>
+          <Profile />
+          <AdminPageSideSlide />
+        </Main1>
         <StudentComplain />
       </MainContainer>
       <Footer />
@@ -23,4 +27,9 @@ const Container = styled.div`
 
 const MainContainer = styled.div`
   display: flex;
+`;
+
+const Main1 = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

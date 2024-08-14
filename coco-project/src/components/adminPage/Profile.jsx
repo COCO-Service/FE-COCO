@@ -54,11 +54,12 @@ const ProfileDiv = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 390px;
-  height: 495px;
+  width: 320px;
+  height: 475px;
   border-radius: 10px;
   border: 0.5px solid #878787;
   background-color: #ffffff;
+  margin: 20px;
 `;
 
 const Title = styled.div`

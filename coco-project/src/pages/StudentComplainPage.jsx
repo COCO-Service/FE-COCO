@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { GuestSideSlide } from "../components/board/GuestSideSlide";
+import { StudentSideSlide } from "../components/board/StudentSideSlide";
 import { Footer } from "../components/footer/Footer";
 import { BoardContainer } from "../components/board/BoardContainer";
-import { GuestHeader } from "../components/header/GuestHeader";
+import { AfterHeader } from "../components/header/AfterHeader";
 
-export const GuestBoardPage = () => {
+export const StudentComplainPage = () => {
   return (
     <Container>
-      <GuestHeader />
+      <AfterHeader isMember={true} isStudent={true} />
       <MainContainer>
-        <GuestSideSlide />
+        <StudentSideSlide />
         <BoardContainer />
         <Div />
       </MainContainer>

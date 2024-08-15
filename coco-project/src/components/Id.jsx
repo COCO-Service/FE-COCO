@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function Id({ ...props }) {
+export const Id = ({ ...props }) => {
   return (
     <IdAll>
       <IdTitle>아이디</IdTitle>
@@ -11,7 +11,7 @@ function Id({ ...props }) {
       ></IdInput>
     </IdAll>
   );
-}
+};
 
 const IdTitle = styled.div`
   font-size: 16px;
@@ -33,5 +33,3 @@ const IdInput = styled.input`
   background-color: #ffffff;
   outline: none;
 `;
-
-export default Id;

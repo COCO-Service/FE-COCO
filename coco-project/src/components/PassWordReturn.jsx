@@ -77,5 +77,3 @@ const PassWordReturnInput = styled.input`
   border: 0.6px solid #282828;
   outline: none;
 `;
-
-export default PassWordReturn;

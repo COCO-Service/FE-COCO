@@ -10,7 +10,7 @@ export const AfterHeader = ({ isMember, isStudent }) => {
 
   return (
     <HeaderAll>
-      <Logo src={COCOLogo} alt="COCO Logo" onClick={() => navigate("/main")} />
+      <Logo src={COCOLogo} alt="COCO Logo" onClick={() => navigate("/")} />
       <NavAll>
         <BoardNav
           pathname={pathname}

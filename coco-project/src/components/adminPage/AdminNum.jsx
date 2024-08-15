@@ -1,3 +1,5 @@
+// 사용하지 않는 컴포넌트입니다.
+
 import styled from "styled-components";
 
 function AdminNum() {

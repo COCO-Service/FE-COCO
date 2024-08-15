@@ -1,18 +1,19 @@
-// 사용하지 않는 페이지입니다.
-
 import Logo from "../assets/COCO.svg";
 import { PassWord } from "../components/PassWord";
 import styled from "styled-components";
 import { Id } from "./../components/Id";
 import { Name } from "./../components/Name";
-import AdminNum from "./../components/adminPage/AdminNum";
-import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
+import { useEffect, useState } from "react";
 import { PassWordReturn } from "./../components/PassWordReturn";
 
-export const AdminSignUpPage = () => {
+export const SignUpPage = () => {
+  const navigate = useNavigate();
+  const LoginNavClick = () => {
+    navigate("/login");
+  };
+
   const [password, setPassword] = useState("");
   const [passwordReturn, setPasswordReturn] = useState("");
 
@@ -20,9 +21,10 @@ export const AdminSignUpPage = () => {
     id: "",
     password1: "",
     password2: "",
+    named: "",
   });
 
-  const { id, password1, password2 } = inputs;
+  const { id, password1, password2, named } = inputs;
 
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -41,12 +43,7 @@ export const AdminSignUpPage = () => {
         console.log("비밀번호가 다릅니다. 다시 입력해주세요");
       }
     }
-  }, [password1, password2, id]);
-
-  const navigate = useNavigate();
-  const LoginNavClick = () => {
-    navigate("/Login");
-  };
+  }, [password1, password2, id, named]);
 
   return (
     <SignUpContainer>
@@ -78,8 +75,7 @@ export const AdminSignUpPage = () => {
                 $passwordReturn={passwordReturn}
                 $setPasswordReturn={setPasswordReturn}
               />
-              <Name />
-              <AdminNum />
+              <Name onChange={onChange} value={named} name="named" />
             </InputAll>
           </SignUpContentsAll>
           <FooterAll>
@@ -147,6 +143,7 @@ const LoginAll = styled.div`
   display: flex;
   justify-content: center;
   gap: 7px;
+  background-color: #ffffff;
 `;
 
 const CheckBoxText = styled.div`
@@ -196,7 +193,7 @@ const CocoLogo = styled.img`
 const SignUpAll = styled.div`
   /* width: 600px; */
   /* padding: 60px 42px;/ */
-  height: 1178px;
+  height: 1100px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -16,6 +16,7 @@ import { StudentNoticePage } from "./pages/StudentNoticePage";
 import { StudentComplainPage } from "./pages/StudentComplainPage";
 import { AdminMyComplainPage } from "./pages/AdminMyComplainPage";
 import { AdminMyNoticePage } from "./pages/AdminMyNoticePage";
+import { SignUpPage } from "./pages/SignUp";
 
 export const AppRouter = () => {
   return (
@@ -29,7 +30,7 @@ export const AppRouter = () => {
       <Route path="/studentComplainPage1" element={<StudentComplainPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route
-        path="/main"
+        path="/"
         element={<MainPage isMember={true} isStudent={false} />}
       />
       <Route path="/guestBoardPage1" element={<GuestBoardPage />} />
@@ -43,6 +44,7 @@ export const AppRouter = () => {
       <Route path="/adminMyComplainPage" element={<AdminMyComplainPage />} />
       <Route path="/adminMyNoticePage" element={<AdminMyNoticePage />} />
       <Route path="*" element={<div>404</div>} />
+      <Route path="/signup" element={<SignUpPage />} />
     </Routes>
   );
 };

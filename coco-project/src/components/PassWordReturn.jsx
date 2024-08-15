@@ -53,7 +53,7 @@ const FakePassWordReturnDiv = styled.div`
 
 const PassWordReturnEyes = styled.div`
   position: absolute;
-  top: 21px;
+  top: 18.5px;
   right: 52px;
   cursor: pointer;
 `;

@@ -17,6 +17,7 @@ import { StudentComplainPage } from "./pages/StudentComplainPage";
 import { AdminMyComplainPage } from "./pages/AdminMyComplainPage";
 import { AdminMyNoticePage } from "./pages/AdminMyNoticePage";
 import { SignUpPage } from "./pages/SignUp";
+import { Navigate } from "react-router-dom";
 
 export const AppRouter = () => {
   return (
@@ -29,8 +30,9 @@ export const AppRouter = () => {
       <Route path="/studentNoticePage1" element={<StudentNoticePage />} />
       <Route path="/studentComplainPage1" element={<StudentComplainPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Navigate to="/main" />} />
       <Route
-        path="/"
+        path="/main"
         element={<MainPage isMember={true} isStudent={false} />}
       />
       <Route path="/guestBoardPage1" element={<GuestBoardPage />} />
@@ -43,8 +45,8 @@ export const AppRouter = () => {
       <Route path="/adminNoticePage1" element={<AdminNoticePage />} />
       <Route path="/adminMyComplainPage" element={<AdminMyComplainPage />} />
       <Route path="/adminMyNoticePage" element={<AdminMyNoticePage />} />
-      <Route path="*" element={<div>404</div>} />
       <Route path="/signup" element={<SignUpPage />} />
+      <Route path="*" element={<div>404</div>} />
     </Routes>
   );
 };

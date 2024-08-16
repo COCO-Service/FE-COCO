@@ -6,8 +6,9 @@ export const Name = ({ ...props }) => {
       <NameTitle>이름</NameTitle>
       <NameInput
         type="text"
-        placeholder="이름을 입력하세요"
+        placeholder="이름을 입력하세요(8자 이하)"
         {...props}
+        maxLength="8"
       ></NameInput>
     </NameAll>
   );

@@ -20,9 +20,10 @@ export const PassWord = ({ password, setPassword, ...props }) => {
       <FakePassWordDiv>
         <PassWordInput
           type={showPswd ? "text" : "password"}
-          placeholder="비밀번호를 입력하세요"
+          placeholder="비밀번호를 입력하세요(20자 이하, 특수문자 1개 포함)"
           required
           {...props}
+          maxLength="20"
         />
         <PassWordEyes onClick={toggleShowPswd} className="PassWordEyes">
           {showPswd ? (

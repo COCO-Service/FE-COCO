@@ -24,11 +24,12 @@ export const PassWordReturn = ({
       <FakePassWordReturnDiv>
         <PassWordReturnInput
           type={showPswd ? "text" : "password"}
-          placeholder="비밀번호를 다시 입력하세요"
+          placeholder="비밀번호를 다시 입력하세요(20자 이하, 특수문자 1개 포함)"
           onChange={handleChangePasswordReturn}
           value={$passwordReturn}
           required
           {...props}
+          maxLength="20"
         />
         <PassWordReturnEyes
           onClick={toggleShowPswd}

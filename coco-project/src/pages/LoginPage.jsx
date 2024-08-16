@@ -6,7 +6,19 @@ import LoginBtn from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function LoginPage() {
+
+export const LoginPage = () => {
+  const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/;
+
+  const PasswordCheck = (password) => {
+    if (password.match(passwordRegEx) === null) {
+      console.log("비밀번호 형식을 확인해주세요");
+      return;
+    } else {
+      console.log("비밀번호 형식이 맞습니다");
+    }
+  };
+
   const navigate = useNavigate();
   const SignUpNavClick = () => {
     navigate("/SignUpStart");
@@ -25,6 +37,10 @@ function LoginPage() {
       ...inputs,
       [name]: value,
     });
+
+    if (name === "password") {
+      PasswordCheck(value);
+    }
   };
 
   console.log(inputs);

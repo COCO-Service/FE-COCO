@@ -9,6 +9,17 @@ import { useEffect, useState } from "react";
 import { PassWordReturn } from "./../components/PassWordReturn";
 
 export const SignUpPage = () => {
+  const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/;
+
+  const PasswordCheck = (password) => {
+    if (password.match(passwordRegEx) === null) {
+      console.log("비밀번호 형식을 확인해주세요");
+      return;
+    } else {
+      console.log("비밀번호 형식이 맞습니다");
+    }
+  };
+
   const navigate = useNavigate();
   const LoginNavClick = () => {
     navigate("/login");
@@ -32,6 +43,10 @@ export const SignUpPage = () => {
       ...inputs,
       [name]: value,
     });
+
+    if (name === "password1") {
+      PasswordCheck(value);
+    }
   };
 
   useEffect(() => {

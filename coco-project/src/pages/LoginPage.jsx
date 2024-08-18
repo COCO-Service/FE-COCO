@@ -6,11 +6,10 @@ import LoginBtn from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-
 export const LoginPage = () => {
   const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/;
 
-  const PasswordCheck = (password) => {
+  const passwordCheck = (password) => {
     if (password.match(passwordRegEx) === null) {
       console.log("비밀번호 형식을 확인해주세요");
       return;
@@ -39,7 +38,7 @@ export const LoginPage = () => {
     });
 
     if (name === "password") {
-      PasswordCheck(value);
+      passwordCheck(value);
     }
   };
 
@@ -79,7 +78,7 @@ export const LoginPage = () => {
       </LoginAll>
     </LoginContainer>
   );
-}
+};
 
 const FooterAll = styled.div`
   display: flex;

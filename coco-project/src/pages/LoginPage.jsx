@@ -19,8 +19,8 @@ export const LoginPage = () => {
   };
 
   const navigate = useNavigate();
-  const SignUpNavClick = () => {
-    navigate("/signup");
+  const signUpNavClick = () => {
+    navigate("/signupSelect");
   };
 
   const [inputs, setInputs] = useState({
@@ -71,7 +71,7 @@ export const LoginPage = () => {
             </FooterBtnCheck>
             <SignUpAll>
               <SignUpTitle>회원이 아니신가요?</SignUpTitle>
-              <SignUpNav onClick={SignUpNavClick}>회원가입</SignUpNav>
+              <SignUpNav onClick={signUpNavClick}>회원가입</SignUpNav>
             </SignUpAll>
           </FooterAll>
         </LoginContents>

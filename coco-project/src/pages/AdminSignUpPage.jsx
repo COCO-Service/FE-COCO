@@ -3,9 +3,9 @@
 import Logo from "../assets/COCO.svg";
 import { PassWord } from "../components/PassWord";
 import styled from "styled-components";
-import { Id } from "./../components/Id";
-import { Name } from "./../components/Name";
-import AdminNum from "./../components/adminPage/AdminNum";
+import Id from "./../components/Id";
+import { PasswordReturn } from "../components/PasswordReturn";
+import Name from "./../components/Name";
 import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -71,7 +71,7 @@ export const AdminSignUpPage = () => {
                 $password={password}
                 $setPassword={setPassword}
               />
-              <PassWordReturn
+              <PasswordReturn
                 onChange={onChange}
                 value={password2}
                 name="password2"

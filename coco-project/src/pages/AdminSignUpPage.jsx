@@ -10,7 +10,7 @@ import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import { PassWordReturn } from "./../components/PassWordReturn";
+import { PasswordReturn } from "./../components/PasswordReturn";
 
 export const AdminSignUpPage = () => {
   const [password, setPassword] = useState("");

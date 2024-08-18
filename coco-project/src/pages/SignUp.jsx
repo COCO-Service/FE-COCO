@@ -6,9 +6,20 @@ import { Name } from "./../components/Name";
 import { useNavigate } from "react-router-dom";
 import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 import { useEffect, useState } from "react";
-import { PassWordReturn } from "./../components/PassWordReturn";
+import { PasswordReturn } from "./../components/PasswordReturn";
 
 export const SignUpPage = () => {
+  const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/; // 특수문자 1개 이상, 1자~20자 사이
+
+  const passwordCheck = (password) => {
+    if (password.match(passwordRegEx) === null) {
+      console.log("비밀번호 형식을 확인해주세요");
+      return;
+    } else {
+      console.log("비밀번호 형식이 맞습니다");
+    }
+  };
+
   const navigate = useNavigate();
   const LoginNavClick = () => {
     navigate("/login");
@@ -32,6 +43,10 @@ export const SignUpPage = () => {
       ...inputs,
       [name]: value,
     });
+
+    if (name === "password1") {
+      passwordCheck(value);
+    }
   };
 
   useEffect(() => {
@@ -68,7 +83,7 @@ export const SignUpPage = () => {
                 $password={password}
                 $setPassword={setPassword}
               />
-              <PassWordReturn
+              <PasswordReturn
                 onChange={onChange}
                 value={password2}
                 name="password2"

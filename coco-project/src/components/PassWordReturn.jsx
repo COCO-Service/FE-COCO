@@ -3,7 +3,7 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
-export const PassWordReturn = ({
+export const PasswordReturn = ({
   $passwordReturn,
   $setPasswordReturn,
   ...props
@@ -77,3 +77,5 @@ const PassWordReturnInput = styled.input`
   border: 0.6px solid #282828;
   outline: none;
 `;
+
+

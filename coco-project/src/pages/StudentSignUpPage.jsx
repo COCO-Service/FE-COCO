@@ -70,7 +70,7 @@ export const StudentSignUpPage = () => {
                 $password={password}
                 $setPassword={setPassword}
               />
-              <PassWordReturn
+              <PasswordReturn
                 onChange={onChange}
                 value={password2}
                 name="password2"

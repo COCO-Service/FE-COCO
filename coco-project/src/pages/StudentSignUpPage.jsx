@@ -9,7 +9,7 @@ import { Name } from "./../components/Name";
 import { useNavigate } from "react-router-dom";
 import { SignUpBtn } from "./../components/StudentPage/SignUpBtn";
 import { useEffect, useState } from "react";
-import { PasswordReturn } from "./../components/PasswordReturn";
+import { PasswordReturn } from "../components/PasswordReturn";
 
 export const StudentSignUpPage = () => {
   const navigate = useNavigate();

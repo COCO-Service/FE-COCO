@@ -6,8 +6,10 @@ export const Id = ({ ...props }) => {
       <IdTitle>아이디</IdTitle>
       <IdInput
         type="text"
-        placeholder="아이디를 입력하세요"
+        placeholder="아이디를 입력하세요(5자 이상 15자 이하)"
         {...props}
+        minLength="5"
+        maxLength="15"
       ></IdInput>
     </IdAll>
   );

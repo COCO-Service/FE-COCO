@@ -3,7 +3,7 @@
 import Logo from "../assets/COCO.svg";
 import { PassWord } from "../components/PassWord";
 import styled from "styled-components";
-import Id from "./../components/Id";
+import { Id } from "./../components/Id";
 import { PasswordReturn } from "../components/PasswordReturn";
 import Name from "./../components/Name";
 import { SignUpBtn } from "../components/StudentPage/SignUpBtn";
@@ -78,7 +78,6 @@ export const AdminSignUpPage = () => {
                 $setPasswordReturn={setPasswordReturn}
               />
               <Name />
-              <AdminNum />
             </InputAll>
           </SignUpContentsAll>
           <FooterAll>

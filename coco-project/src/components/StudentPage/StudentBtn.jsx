@@ -1,5 +1,3 @@
-// 사용하지 않는 컴포넌트입니다.
-
 import styled from "styled-components";
 import StudentImg from "../../assets/StudentImg.svg";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const StudentBtn = () => {
   const navigate = useNavigate();
   const StudentBtnClick = () => {
-    navigate("/studentSignUp");
+    navigate("/signup");
   };
   return (
     <StudentWindowAll>

@@ -1,5 +1,3 @@
-// 사용하지 않는 페이지입니다.
-
 import styled from "styled-components";
 import { StudentBtn } from "../components/StudentPage/StudentBtn";
 import { AdminBtn } from "./../components/adminPage/AdminBtn";

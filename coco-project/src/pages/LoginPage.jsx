@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const LoginPage = () => {
+  const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/;
+
+  const passwordCheck = (password) => {
+    if (password.match(passwordRegEx) === null) {
+      console.log("비밀번호 형식을 확인해주세요");
+      return;
+    } else {
+      console.log("비밀번호 형식이 맞습니다");
+    }
+  };
+
   const navigate = useNavigate();
   const SignUpNavClick = () => {
     navigate("/signup");
@@ -25,6 +36,10 @@ export const LoginPage = () => {
       ...inputs,
       [name]: value,
     });
+
+    if (name === "password") {
+      passwordCheck(value);
+    }
   };
 
   console.log(inputs);

@@ -3,7 +3,7 @@ import OpenEye from "../assets/OpenEye.svg";
 import CloseEye from "../assets/CloseEye.svg";
 import styled from "styled-components";
 
-function PassWord({ ...props }) {
+export const PassWord = ({ password, setPassword, ...props }) => {
   const [showPswd, setShowPswd] = useState(false);
 
   const handleChangePassword = (e) => {
@@ -34,7 +34,7 @@ function PassWord({ ...props }) {
       </FakePassWordDiv>
     </PassWordAll>
   );
-}
+};
 
 const FakePassWordDiv = styled.div`
   width: 536.64px;
@@ -44,7 +44,7 @@ const FakePassWordDiv = styled.div`
 
 const PassWordEyes = styled.div`
   position: absolute;
-  top: 21px;
+  top: 18.5px;
   right: 52px;
   cursor: pointer;
 `;
@@ -68,5 +68,3 @@ const PassWordInput = styled.input`
   border: 0.6px solid #282828;
   outline: none;
 `;
-
-export default PassWord;

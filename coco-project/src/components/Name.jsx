@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-function Name() {
+export const Name = ({ ...props }) => {
   return (
     <NameAll>
       <NameTitle>이름</NameTitle>
-      <NameInput type="text" placeholder="이름을 입력하세요"></NameInput>
+      <NameInput
+        type="text"
+        placeholder="이름을 입력하세요"
+        {...props}
+      ></NameInput>
     </NameAll>
   );
-}
+};
 
 const NameTitle = styled.div`
   font-size: 16px;

@@ -1,11 +1,13 @@
+// 사용하지 않는 컴포넌트입니다.
+
 import styled from "styled-components";
 import StudentImg from "../../assets/StudentImg.svg";
 import { useNavigate } from "react-router-dom";
 
-function StudentBtn() {
+export const StudentBtn = () => {
   const navigate = useNavigate();
   const StudentBtnClick = () => {
-    navigate("/StudentSignUp");
+    navigate("/studentSignUp");
   };
   return (
     <StudentWindowAll>
@@ -15,7 +17,7 @@ function StudentBtn() {
       </StudentBtnContent>
     </StudentWindowAll>
   );
-}
+};
 
 const StudentBtnContent = styled.div`
   width: 400px;
@@ -52,5 +54,3 @@ const StudentButton = styled.button`
   background: #4f4cff;
   cursor: pointer;
 `;
-
-export default StudentBtn;

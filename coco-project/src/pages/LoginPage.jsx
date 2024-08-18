@@ -1,8 +1,8 @@
 import Logo from "../assets/COCO.svg";
-import PassWord from "../components/PassWord";
+import { PassWord } from "../components/PassWord";
 import styled from "styled-components";
-import Id from "./../components/Id";
-import LoginBtn from "./../components/LoginBtn";
+import { Id } from "./../components/Id";
+import { LoginBtn } from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ export const LoginPage = () => {
 
   const navigate = useNavigate();
   const SignUpNavClick = () => {
-    navigate("/SignUpStart");
+    navigate("/signup");
   };
 
   const [inputs, setInputs] = useState({
@@ -199,5 +199,3 @@ const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export default LoginPage;

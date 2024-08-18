@@ -1,8 +1,10 @@
-import styled from "styled-components";
-import StudentBtn from "../components/StudentPage/StudentBtn";
-import AdminBtn from "./../components/adminPage/AdminBtn";
+// 사용하지 않는 페이지입니다.
 
-function SignUpStartPage() {
+import styled from "styled-components";
+import { StudentBtn } from "../components/StudentPage/StudentBtn";
+import { AdminBtn } from "./../components/adminPage/AdminBtn";
+
+export const SignUpStartPage = () => {
   return (
     <SignUpStartAll>
       <SignUpTitleAll>
@@ -17,7 +19,7 @@ function SignUpStartPage() {
       </BtnAll>
     </SignUpStartAll>
   );
-}
+};
 
 const SignUpStartAll = styled.div`
   display: flex;
@@ -63,5 +65,3 @@ const BtnAll = styled.div`
   align-items: center;
   gap: 222px;
 `;
-
-export default SignUpStartPage;

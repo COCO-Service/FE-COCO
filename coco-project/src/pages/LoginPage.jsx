@@ -4,23 +4,12 @@ import styled from "styled-components";
 import { Id } from "./../components/Id";
 import { LoginBtn } from "./../components/LoginBtn";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const LoginPage = () => {
-  const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/;
-
-  const passwordCheck = (password) => {
-    if (password.match(passwordRegEx) === null) {
-      console.log("비밀번호 형식을 확인해주세요");
-      return;
-    } else {
-      console.log("비밀번호 형식이 맞습니다");
-    }
-  };
-
   const navigate = useNavigate();
-  const SignUpNavClick = () => {
-    navigate("/signup");
+  const signUpNavClick = () => {
+    navigate("/signupSelect");
   };
 
   const [inputs, setInputs] = useState({
@@ -36,13 +25,13 @@ export const LoginPage = () => {
       ...inputs,
       [name]: value,
     });
-
-    if (name === "password") {
-      passwordCheck(value);
-    }
   };
 
-  console.log(inputs);
+  useEffect(() => {
+    if (id != "" && password != "") {
+      console.log(inputs);
+    }
+  }, [id, password]);
 
   return (
     <LoginContainer>
@@ -71,7 +60,7 @@ export const LoginPage = () => {
             </FooterBtnCheck>
             <SignUpAll>
               <SignUpTitle>회원이 아니신가요?</SignUpTitle>
-              <SignUpNav onClick={SignUpNavClick}>회원가입</SignUpNav>
+              <SignUpNav onClick={signUpNavClick}>회원가입</SignUpNav>
             </SignUpAll>
           </FooterAll>
         </LoginContents>

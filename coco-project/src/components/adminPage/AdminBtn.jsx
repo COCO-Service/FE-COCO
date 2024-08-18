@@ -1,21 +1,19 @@
-// 사용하지 않는 컴포넌트입니다.
-
 import styled from "styled-components";
 import TeacherImg from "../../assets/TeacherImg.svg";
 import { useNavigate } from "react-router-dom";
 
 export const AdminBtn = () => {
   const navigate = useNavigate();
-  const AdminBtnClick = () => {
-    navigate("/adminSignUp");
+  const btnClick = () => {
+    navigate("/signup");
   };
   return (
-    <StudentWindowAll>
+    <AdminWindowAll>
       <AdminBtnContent>
         <AdminBtnImg src={TeacherImg} alt="선생님 이미지" />
-        <StudentButton onClick={AdminBtnClick}>선생님</StudentButton>
+        <AdminButton onClick={btnClick}>선생님</AdminButton>
       </AdminBtnContent>
-    </StudentWindowAll>
+    </AdminWindowAll>
   );
 };
 
@@ -31,7 +29,7 @@ const AdminBtnContent = styled.div`
 
 const AdminBtnImg = styled.img``;
 
-const StudentWindowAll = styled.div`
+const AdminWindowAll = styled.div`
   width: 400px;
   height: 400px;
   border-radius: 10px;
@@ -39,7 +37,7 @@ const StudentWindowAll = styled.div`
   box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
 `;
 
-const StudentButton = styled.button`
+const AdminButton = styled.button`
   font-size: 20px;
   color: #ffffff;
   font-weight: 400;

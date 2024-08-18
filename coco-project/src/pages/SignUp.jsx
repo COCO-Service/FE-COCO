@@ -11,13 +11,16 @@ import { PasswordReturn } from "../components/PasswordReturn";
 export const SignUpPage = () => {
   const passwordRegEx = /^(?=.*[!@#$%^&*])(?=.{1,20}$).*/; // 특수문자 1개 이상, 1자~20자 사이
 
-  const passwordCheck = (password) => {
-    if (password.match(passwordRegEx) === null) {
-      console.log("비밀번호 형식을 확인해주세요");
-      return;
-    } else {
-      console.log("비밀번호 형식이 맞습니다");
+  const passwordCheck = () => {
+    if (password1 != password2) {
+      console.log("비밀번호가 다릅니다. 다시 입력해주세요");
+      return false;
     }
+    if (!passwordRegEx.test(password1)) {
+      console.log("비밀번호 형식을 확인해주세요");
+      return false;
+    }
+    return true;
   };
 
   const navigate = useNavigate();
@@ -43,19 +46,14 @@ export const SignUpPage = () => {
       ...inputs,
       [name]: value,
     });
-
-    if (name === "password1") {
-      passwordCheck(value);
-    }
   };
 
   useEffect(() => {
-    // console.log(password1, password2)
-    if (password1 != "" && password2 != "") {
-      if (password1 == password2) {
+    if (password1 != "" && password2 != "" && named != "" && id != "") {
+      //password1, password2, named, id 네 개 모두 입력이 되었다면 출력
+      if (passwordCheck()) {
+        //비밀번호 입력 형식이 맞다면 출력
         console.log(inputs);
-      } else {
-        console.log("비밀번호가 다릅니다. 다시 입력해주세요");
       }
     }
   }, [password1, password2, id, named]);
